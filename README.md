@@ -153,7 +153,7 @@ To verify the package works correctly, a series of test scripts were written:
 2. A test that calls the function returning all patients and loops through the cursor to display them.             
 3. Tests that admit specific patients and then confirm the change using the count function.                
                     
-- see [code](<Scenario 2/src/testing-scripts.sql>)    
+- see [code](<Scenario 2/src/testing_scripts.sql>)    
 - see [screenshot 1](<Scenario 2/screenshots/03-bulk_insert.png>)
 - see [screenshot 2](<Scenario 2/screenshots/04-show all patients.png>)
 - see [screenshot 3](<Scenario 2/screenshots/05- admit patient and check count>)
