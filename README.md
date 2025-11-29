@@ -53,13 +53,14 @@ It checks:
 1.  The day of the week
 2.  The current hour
 3.  If the action is outside allowed days or hours:  
-       i. The logging procedure is called         
-       ii. The action is blocked with RAISE_APPLICATION_ERROR
+       -The logging procedure is called         
+       -The action is blocked with RAISE_APPLICATION_ERROR
 
 - see [code](<Scenario 1/src/TRIGGER auca_access_control_trg.sql>)    
 - see [screenshot](<Scenario 1/screenshots/04-trigger.png>)
-
+> NB: The question suggested we use 2 triggers to implement the logic however one is enough.
 ### 5. Testing 
-To test we are using a simple insert statement on table `auca` outside allowed hours.   
-`INSERT INTO auca (username, data_value) VALUES ('sam', 'Test Data');`
+To test this we are using a simple insert statement on table `auca` outside allowed hours.   
+`INSERT INTO auca (username, data_value) VALUES ('sam', 'Test Data');`  
+Then a simple select all on `auca-error-log` should show us the error logged.
 - see [screenshot](<Scenario 1/screenshots/05-test.png>)
