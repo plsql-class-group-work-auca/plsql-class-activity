@@ -61,6 +61,6 @@ It checks:
 > NB: The question suggested we use 2 triggers to implement the logic however one is enough.
 ### 5. Testing 
 To test this we are using a simple insert statement on table `auca` outside allowed hours.   
-`INSERT INTO auca (username, data_value) VALUES ('sam', 'Test Data');`  
-Then a simple select all on `auca-error-log` should show us the error logged.
+`INSERT INTO auca (username, data_value) VALUES ('sam', 'Test Data');            
+ SELECT * FROM auca_error_log;`
 - see [screenshot](<Scenario 1/screenshots/05-test.png>)
