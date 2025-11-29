@@ -77,37 +77,37 @@ The original scenario required implementing:
 
 ### **1. Database Tables** 
 
-A patients table for storing details like ID, name, age, gender, and admission status.    
-A doctors table storing doctor ID, name, and specialty.
+- A patients table for storing details like ID, name, age, gender, and admission status.    
+- A doctors table storing doctor ID, name, and specialty.
 
 ### **2. Package Specification** 
 
-A collection type to hold multiple patient records.   
-A procedure for bulk loading of patients.    
-A function to display all patients via a returned cursor.        
-A function to count admitted patients.       
-A procedure to admit/update a patient's status.        
+- A collection type to hold multiple patient records.   
+- A procedure for bulk loading of patients.    
+- A function to display all patients via a returned cursor.        
+- A function to count admitted patients.       
+- A procedure to admit/update a patient's status.        
 
 ### **3. Package Body**
 
-Efficient insertion using bulk processing and FORALL.      
-Use of commits for data consistency.        
-Complete implementation of all required functions and procedures.         
+- Efficient insertion using bulk processing and FORALL.      
+- Use of commits for data consistency.        
+- Complete implementation of all required functions and procedures.         
 
 ### **4. Testing**
 
-Inserting multiple patients at once.    
-Displaying patient data from the function.    
-Admitting selected patients.     
-Verifying updated admission counts.           
+- Inserting multiple patients at once.    
+- Displaying patient data from the function.    
+- Admitting selected patients.     
+- Verifying updated admission counts.           
 
 # How the Solution Was Structured
 
 ### **1. Designing the Tables**
 To meet the project requirements, two relational tables were created.
     
-- see [code](<Scenario 1/src/auca-error-log.sql>)    
-- see [screenshot](<Scenario 1/screenshots/02-auca-error-log.sql>)
+- see [code](<Scenario 2/src/tables.sql>)    
+- see [screenshot](<Scenario 2/screenshots/01-tables.png>)
 
 ### **2. Building the Package Specification**
 
@@ -120,8 +120,8 @@ The specification defined the “what” of the package:
         `count_admitted` 
         `admit_patient` 
 
-- see [code](<Scenario 1/src/auca-error-log.sql>)    
-- see [screenshot](<Scenario 1/screenshots/02-auca-error-log.sql>)
+- see [code](<Scenario 2/src/pkg_spec.sql>)    
+- see [screenshot](<Scenario 2/screenshots/02-pkg.png>)
 
 ### **3. Implementing the Package Body**
 
@@ -143,8 +143,8 @@ A procedure was added to update a specific patient’s status from “NO” to �
 **Transaction Management**:
 COMMIT statements were strategically placed to safeguard consistency after bulk insertions and updates.
 
-- see [code](<Scenario 1/src/auca-error-log.sql>)    
-- see [screenshot](<Scenario 1/screenshots/02-auca-error-log.sql>)
+- see [code](<Scenario 2/src/pkg_body.sql>)    
+- see [screenshot](<Scenario 2/screenshots/02-pkg.png>)
 
 ### **4. Testing** 
 
@@ -154,5 +154,7 @@ To verify the package works correctly, a series of test scripts were written:
 2. A test that calls the function returning all patients and loops through the cursor to display them.             
 3. Tests that admit specific patients and then confirm the change using the count function.                
                     
-- see [code](<Scenario 1/src/auca-error-log.sql>)    
-- see [screenshot](<Scenario 1/screenshots/02-auca-error-log.sql>)
+- see [code](<Scenario 2/src/testing-scripts.sql>)    
+- see [screenshot 1](<Scenario 2/screenshots/03-bulk insert.png>)
+- see [screenshot 2](<Scenario 2/screenshots/04-show all patients.png>)
+- see [screenshot 3](<Scenario 2/screenshots/05-admit patient and check count>)
