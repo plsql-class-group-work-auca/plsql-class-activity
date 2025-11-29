@@ -75,12 +75,12 @@ The solution was implemented using Oracle PL/SQL features such as packages, coll
 
 The original scenario required implementing:
 
-### **Database Tables** 
+### **1. Database Tables** 
 
 A patients table for storing details like ID, name, age, gender, and admission status.    
 A doctors table storing doctor ID, name, and specialty.
 
-### **Package Specification** 
+### **2. Package Specification** 
 
 A collection type to hold multiple patient records.   
 A procedure for bulk loading of patients.    
@@ -88,13 +88,13 @@ A function to display all patients via a returned cursor.
 A function to count admitted patients.       
 A procedure to admit/update a patient's status.        
 
-### **Package Body**
+### **3. Package Body**
 
 Efficient insertion using bulk processing and FORALL.      
 Use of commits for data consistency.        
 Complete implementation of all required functions and procedures.         
 
-### **Testing**
+### **4. Testing**
 
 Inserting multiple patients at once.    
 Displaying patient data from the function.    
@@ -103,13 +103,13 @@ Verifying updated admission counts.
 
 # How the Solution Was Structured
 
-### **Designing the Tables**
+### **1. Designing the Tables**
 To meet the project requirements, two relational tables were created.
     
 - see [code](<Scenario 1/src/auca-error-log.sql>)    
 - see [screenshot](<Scenario 1/screenshots/02-auca-error-log.sql>)
 
-### **Building the Package Specification**
+### **2. Building the Package Specification**
 
 The specification defined the “what” of the package:       
 - A record type representing a single patient structure.       
@@ -123,7 +123,7 @@ The specification defined the “what” of the package:
 - see [code](<Scenario 1/src/auca-error-log.sql>)    
 - see [screenshot](<Scenario 1/screenshots/02-auca-error-log.sql>)
 
-### **Implementing the Package Body**
+### **3. Implementing the Package Body**
 
 The package body focused on the “how”:
 
@@ -146,7 +146,7 @@ COMMIT statements were strategically placed to safeguard consistency after bulk 
 - see [code](<Scenario 1/src/auca-error-log.sql>)    
 - see [screenshot](<Scenario 1/screenshots/02-auca-error-log.sql>)
 
-### **Testing** 
+### **4. Testing** 
 
 To verify the package works correctly, a series of test scripts were written:        
    
