@@ -111,14 +111,14 @@ To meet the project requirements, two relational tables were created.
 ### **2. Building the Package Specification**
 
 The specification defined the “what” of the package:       
-- A record type representing a single patient structure.       
-- A collection type, allowing PL/SQL to store multiple patient records at once.        
-- Four essential operations exposed as public procedures/functions:                
-        `bulk_load_patients` 
-        `show_all_patients` 
-        `count_admitted` 
-        `admit_patient` 
-
+1. A record type representing a single patient structure.       
+2. A collection type, allowing PL/SQL to store multiple patient records at once.        
+3. Four essential operations exposed as public procedures/functions:                
+  `bulk_load_patients` 
+  `show_all_patients` 
+  `count_admitted` 
+  `admit_patient` 
+           
 - see [code](<Scenario 2/src/pkg_spec.sql>)    
 - see [screenshot](<Scenario 2/screenshots/02-pkg.png>)
 
@@ -157,3 +157,6 @@ To verify the package works correctly, a series of test scripts were written:
 - see [screenshot 1](<Scenario 2/screenshots/03-bulk_insert.png>)
 - see [screenshot 2](<Scenario 2/screenshots/04-show all patients.png>)
 - see [screenshot 3](<Scenario 2/screenshots/05- admit patient and check count>)
+
+# Comments By Each Member
+1. Musoni Nshuti Sam: Created Organization, helped develop scripts and take screenshots, guided other members.
