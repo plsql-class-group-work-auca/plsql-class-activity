@@ -14,11 +14,11 @@ The goal is to enforce strict rules about when users are allowed to access or mo
 
 ### The Rules are:
 - No access on Sabbath
-   - Users are not allowed to access or record data on Saturday or Sunday.
+     Users are not allowed to access or record data on Saturday or Sunday.
 - Limited access hours
-   - Users may only access the system from Monday to Friday, between 8:00 AM and 5:00 PM.
+     Users may only access the system from Monday to Friday, between 8:00 AM and 5:00 PM.
 - Automatic restrictions
-   - Any attempt to access or modify data outside allowed days or hours must be:
+     Any attempt to access or modify data outside allowed days or hours must be:
       - Blocked immediately
       - Recorded in an audit table for security and monitoring
 
@@ -50,7 +50,7 @@ This trigger fires before every insert or update on the auca table.
 It checks:
 1.  The day of the week
 2.  The current hour
-3.  If the action is outside allowed days or hours:
+3.  If the action is outside allowed days or hours:  
     i. The logging procedure is called
     ii. The action is blocked with RAISE_APPLICATION_ERROR
 
