@@ -1,5 +1,5 @@
 # plsql-class-activity
-## Group Members:
+## *Group Members:*
 - Musoni Nshuti Sam 28857
 
 # Scenario 1: AUCA System Access Policy
@@ -159,4 +159,4 @@ To verify the package works correctly, a series of test scripts were written:
 - see [screenshot 3](<Scenario 2/screenshots/05- admit patient and check count>)
 
 # Comments By Each Member
-1. Musoni Nshuti Sam: Created Organization, helped develop scripts and take screenshots, guided other members.
+- **Musoni Nshuti Sam:** Created Organization, helped develop scripts and take screenshots, guided other members.
