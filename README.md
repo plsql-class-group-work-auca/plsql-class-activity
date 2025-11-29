@@ -24,7 +24,7 @@ The goal is to enforce strict rules about when users are allowed to access or mo
 
 # How the Problem Was Solved
 ### 1. Creating the Main Table (auca)
-This is the table where normal system data is stored.
+This is the table where normal system data is stored.  
 Any insert or update to this table is subject to the AUCA access policy.
 - see [code]()
 - see [screenshot]()
@@ -34,9 +34,10 @@ It contains:
 - The username
 - The time of the attempted action
 - The type of action (INSERT/UPDATE)
-- The reason why the action was rejected     
-see [code]()
-see [screenshot]()
+- The reason why the action was rejected
+                       
+- see [code]()    
+- see [screenshot]()
 ### 3. Logging Procedure (Autonomous Transaction)
 A stored procedure was created to handle all logging.
 It is marked with PRAGMA AUTONOMOUS_TRANSACTION, which ensures the log entry is committed even if the main operation is blocked.
@@ -51,6 +52,7 @@ It checks:
 - The current hour
 - If the action is outside allowed days or hours:
 - The logging procedure is called
-- The action is blocked with RAISE_APPLICATION_ERROR  
-see [code]()
-see [screenshot]()
+- The action is blocked with RAISE_APPLICATION_ERROR
+                  
+- see [code]()
+- see [screenshot]()
