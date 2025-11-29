@@ -71,35 +71,35 @@ The system needed to handle bulk patient loading, admission updates, and display
       
 The solution was implemented using Oracle PL/SQL features such as packages, collections, ref cursors, and FORALL bulk operations.
 
-### Problem Requirements
+## Problem Requirements
 
 The original scenario required implementing:
 
 ### **Database Tables** 
 
-A patients table for storing details like ID, name, age, gender, and admission status.
+A patients table for storing details like ID, name, age, gender, and admission status.    
 A doctors table storing doctor ID, name, and specialty.
 
 ### **Package Specification** 
 
-A collection type to hold multiple patient records.
-A procedure for bulk loading of patients.
-A function to display all patients via a returned cursor.
-A function to count admitted patients.
-A procedure to admit/update a patient's status.
+A collection type to hold multiple patient records.   
+A procedure for bulk loading of patients.    
+A function to display all patients via a returned cursor.        
+A function to count admitted patients.       
+A procedure to admit/update a patient's status.        
 
 ### **Package Body**
 
-Efficient insertion using bulk processing and FORALL.
-Use of commits for data consistency.
-Complete implementation of all required functions and procedures.
+Efficient insertion using bulk processing and FORALL.      
+Use of commits for data consistency.        
+Complete implementation of all required functions and procedures.         
 
 ### **Testing**
 
-Inserting multiple patients at once.
-Displaying patient data from the function.
-Admitting selected patients.
-Verifying updated admission counts.
+Inserting multiple patients at once.    
+Displaying patient data from the function.    
+Admitting selected patients.     
+Verifying updated admission counts.           
 
 # How the Solution Was Structured
 
@@ -111,10 +111,10 @@ To meet the project requirements, two relational tables were created.
 
 ### **Building the Package Specification**
 
-The specification defined the “what” of the package:
-- A record type representing a single patient structure.
-- A collection type, allowing PL/SQL to store multiple patient records at once.
-- Four essential operations exposed as public procedures/functions:    
+The specification defined the “what” of the package:       
+- A record type representing a single patient structure.       
+- A collection type, allowing PL/SQL to store multiple patient records at once.        
+- Four essential operations exposed as public procedures/functions:                
         `bulk_load_patients` 
         `show_all_patients` 
         `count_admitted` 
@@ -148,11 +148,11 @@ COMMIT statements were strategically placed to safeguard consistency after bulk 
 
 ### **Testing** 
 
-To verify the package works correctly, a series of test scripts were written:
+To verify the package works correctly, a series of test scripts were written:        
    
-1. A test that prepares several patient entries using the collection type and passes them into the bulk-loading procedure.
-2. A test that calls the function returning all patients and loops through the cursor to display them.
-3. Tests that admit specific patients and then confirm the change using the count function.
-           
+1. A test that prepares several patient entries using the collection type and passes them into the bulk-loading procedure.        
+2. A test that calls the function returning all patients and loops through the cursor to display them.             
+3. Tests that admit specific patients and then confirm the change using the count function.                
+                    
 - see [code](<Scenario 1/src/auca-error-log.sql>)    
 - see [screenshot](<Scenario 1/screenshots/02-auca-error-log.sql>)
