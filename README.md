@@ -23,32 +23,34 @@ The goal is to enforce strict rules about when users are allowed to access or mo
       - Recorded in an audit table for security and monitoring
 
 # How the Problem Was Solved
-### Creating the Main Table (auca)
+### 1. Creating the Main Table (auca)
 This is the table where normal system data is stored.
 Any insert or update to this table is subject to the AUCA access policy.
 - see [code]()
 - see [screenshot]()
-### Creating the Error Logging Table
+### 2. Creating the Error Logging Table
 All policy violations (blocked attempts) are stored in auca_error_log.
 It contains:
 - The username
 - The time of the attempted action
 - The type of action (INSERT/UPDATE)
-- The reason why the action was rejected
+- The reason why the action was rejected     
 see [code]()
 see [screenshot]()
-### Logging Procedure (Autonomous Transaction)
+### 3. Logging Procedure (Autonomous Transaction)
 A stored procedure was created to handle all logging.
 It is marked with PRAGMA AUTONOMOUS_TRANSACTION, which ensures the log entry is committed even if the main operation is blocked.
 
 This allows Oracle to save the violation before the error stops execution.
 - see [code]()
 - see [screenshot]()
-### Trigger 1 – Access Control
+### 4. Trigger – Access Control
 This trigger fires before every insert or update on the auca table.
 It checks:
 - The day of the week
 - The current hour
 - If the action is outside allowed days or hours:
 - The logging procedure is called
-- The action is blocked with RAISE_APPLICATION_ERROR
+- The action is blocked with RAISE_APPLICATION_ERROR  
+see [code]()
+see [screenshot]()
