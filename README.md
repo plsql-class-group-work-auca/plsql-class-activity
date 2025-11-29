@@ -61,6 +61,98 @@ It checks:
 > NB: The question suggested we use 2 triggers to implement the logic however one is enough.
 ### 5. Testing 
 To test this we are using a simple insert statement on table `auca` outside allowed hours.   
-`INSERT INTO auca (username, data_value) VALUES ('sam', 'Test Data');            
- SELECT * FROM auca_error_log;`
+`INSERT INTO auca (username, data_value) VALUES ('sam', 'Test Data');`            
+ `SELECT * FROM auca_error_log;`
 - see [screenshot](<Scenario 1/screenshots/05-test.png>)
+
+# Scenario 2: Hospital Management Package
+The goal of this project was to design a PL/SQL package that manages hospital patient information efficiently.  
+The system needed to handle bulk patient loading, admission updates, and display of stored records, while keeping the logic modular and easy to maintain.
+      
+The solution was implemented using Oracle PL/SQL features such as packages, collections, ref cursors, and FORALL bulk operations.
+
+### Problem Requirements
+
+The original scenario required implementing:
+
+**Database Tables** 
+
+A patients table for storing details like ID, name, age, gender, and admission status.
+A doctors table storing doctor ID, name, and specialty.
+
+**Package Specification** 
+
+A collection type to hold multiple patient records.
+A procedure for bulk loading of patients.
+A function to display all patients via a returned cursor.
+A function to count admitted patients.
+A procedure to admit/update a patient's status.
+
+**Package Body**
+
+Efficient insertion using bulk processing and FORALL.
+Use of commits for data consistency.
+Complete implementation of all required functions and procedures.
+
+**Testing**
+
+Inserting multiple patients at once.
+Displaying patient data from the function.
+Admitting selected patients.
+Verifying updated admission counts.
+
+# How the Solution Was Structured
+
+**Designing the Tables**
+To meet the project requirements, two relational tables were created.
+    
+- see [code](<Scenario 1/src/auca-error-log.sql>)    
+- see [screenshot](<Scenario 1/screenshots/02-auca-error-log.sql>)
+
+**Building the Package Specification**
+
+The specification defined the “what” of the package:
+- A record type representing a single patient structure.
+- A collection type, allowing PL/SQL to store multiple patient records at once.
+- Four essential operations exposed as public procedures/functions:    
+        `bulk_load_patients` 
+        `show_all_patients` 
+        `count_admitted` 
+        `admit_patient` 
+
+- see [code](<Scenario 1/src/auca-error-log.sql>)    
+- see [screenshot](<Scenario 1/screenshots/02-auca-error-log.sql>)
+
+**Implementing the Package Body**
+
+The package body focused on the “how”:
+
+**Bulk Loading**
+A FORALL construct was used to insert many patient records in a single optimized SQL operation.
+This dramatically improves performance compared to inserting row by row.
+
+**Returning All Patients**
+A ref cursor function was implemented to return the full patient list so external scripts could fetch and display results easily.
+
+**Counting Admitted Patients**
+A simple aggregate function was implemented to count records with the “YES” admission status.
+
+**Admitting a Patient**
+A procedure was added to update a specific patient’s status from “NO” to “YES”.
+
+**Transaction Management**
+COMMIT statements were strategically placed to safeguard consistency after bulk insertions and updates.
+
+- see [code](<Scenario 1/src/auca-error-log.sql>)    
+- see [screenshot](<Scenario 1/screenshots/02-auca-error-log.sql>)
+
+**Testing** 
+
+To verify the package works correctly, a series of test scripts were written:
+   
+1. A test that prepares several patient entries using the collection type and passes them into the bulk-loading procedure.
+2. A test that calls the function returning all patients and loops through the cursor to display them.
+3. Tests that admit specific patients and then confirm the change using the count function.
+           
+- see [code](<Scenario 1/src/auca-error-log.sql>)    
+- see [screenshot](<Scenario 1/screenshots/02-auca-error-log.sql>)
