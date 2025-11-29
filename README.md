@@ -66,8 +66,7 @@ To test this we are using a simple insert statement on table `auca` outside allo
 - see [screenshot](<Scenario 1/screenshots/05-test.png>)
 
 # Scenario 2: Hospital Management Package
-The goal of this project was to design a PL/SQL package that manages hospital patient information efficiently.  
-The system needed to handle bulk patient loading, admission updates, and display of stored records, while keeping the logic modular and easy to maintain.
+The goal of here is to design a PL/SQL package that manages hospital patient information efficiently. The system needed to handle bulk patient loading, admission updates, and display of stored records, while keeping the logic modular and easy to maintain.
       
 The solution was implemented using Oracle PL/SQL features such as packages, collections, ref cursors, and FORALL bulk operations.
 
@@ -155,6 +154,6 @@ To verify the package works correctly, a series of test scripts were written:
 3. Tests that admit specific patients and then confirm the change using the count function.                
                     
 - see [code](<Scenario 2/src/testing-scripts.sql>)    
-- see [screenshot 1](<Scenario 2/screenshots/03-bulk insert.png>)
+- see [screenshot 1](<Scenario 2/screenshots/03-bulk_insert.png>)
 - see [screenshot 2](<Scenario 2/screenshots/04-show all patients.png>)
-- see [screenshot 3](<Scenario 2/screenshots/05-admit patient and check count>)
+- see [screenshot 3](<Scenario 2/screenshots/05- admit patient and check count>)
