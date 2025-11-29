@@ -156,7 +156,7 @@ To verify the package works correctly, a series of test scripts were written:
 - see [code](<Scenario 2/src/testing_scripts.sql>)    
 - see [screenshot 1](<Scenario 2/screenshots/03-bulk_insert.png>)
 - see [screenshot 2](<Scenario 2/screenshots/04-show all patients.png>)
-- see [screenshot 3](<Scenario 2/screenshots/05- admit patient and check count>)
+- see [screenshot 3](<Scenario 2/screenshots/05- admit patient and check count.png>)
 
 # Comments By Each Member
 - **Musoni Nshuti Sam:** Created Organization, helped develop scripts and take screenshots, guided other members.
