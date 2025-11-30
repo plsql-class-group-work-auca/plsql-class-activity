@@ -131,20 +131,20 @@ The specification defined the “what” of the package:
 
 The package body focused on the “how”:
 
-**Bulk Loading**:
+- **Bulk Loading**:
 A FORALL construct was used to insert many patient records in a single optimized SQL operation.
 This dramatically improves performance compared to inserting row by row.
 
-**Returning All Patients**:
+- **Returning All Patients**:
 A ref cursor function was implemented to return the full patient list so external scripts could fetch and display results easily.
 
-**Counting Admitted Patients**:
+- **Counting Admitted Patients**:
 A simple aggregate function was implemented to count records with the “YES” admission status.
 
-**Admitting a Patient**:
+- **Admitting a Patient**:
 A procedure was added to update a specific patient’s status from “NO” to “YES”.
 
-**Transaction Management**:
+- **Transaction Management**:
 COMMIT statements were strategically placed to safeguard consistency after bulk insertions and updates.
 
 - see [code](<Scenario 2/src/pkg_body.sql>)    
