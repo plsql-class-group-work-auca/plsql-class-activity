@@ -1,6 +1,11 @@
 # plsql-class-activity
 ## *Group Members:*
 - Musoni Nshuti Sam 28857
+- Divine Ukwishatse 28204
+- Impundu Gatera Brazia 29057
+- Doris Akimana 26675
+- Emmanuel Niyitugenera 27013
+> All group members are in Thursday Group D
 
 # Scenario 1: AUCA System Access Policy
 This project implements the AUCA System Access Policy using Oracle SQL and PL/SQL triggers.
@@ -159,4 +164,8 @@ To verify the package works correctly, a series of test scripts were written:
 - see [screenshot 3](<Scenario 2/screenshots/05- admit patient and check count.png>)
 
 # Comments By Each Member
-- **Musoni Nshuti Sam:** Created Organization, helped develop scripts and take screenshots, guided other members.
+- **Musoni Nshuti Sam:** Created Organization, helped develop plsql scripts and take screenshots, guided other members.
+- **Divine Ukwishatse:** helped develop plsql scripts
+- **Impundu Gatera Brazia:** helped develop plsql scripts
+- **Doris Akimana 26675:** helped develop plsql scripts
+- **Emmanuel Niyitugenera:** helped develop plsql scripts
