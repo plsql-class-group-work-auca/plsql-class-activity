@@ -32,7 +32,7 @@ The goal is to enforce strict rules about when users are allowed to access or mo
 This is the table where normal system data is stored.  
 Any insert or update to this table is subject to the AUCA access policy.   
 - see [code](<Scenario 1/src/auca.sql>)  
-- see [screenshot](<Scenario 1/screenshots/01-auca>)
+- see [screenshot](<Scenario 1/screenshots/01-auca.png>)
 ### 2. Creating the Error Logging Table
 All policy violations (blocked attempts) are stored in auca_error_log.
 It contains:
@@ -41,8 +41,8 @@ It contains:
 3. The type of action (INSERT/UPDATE)
 4. The reason why the action was rejected
               
-- see [code](<Scenario 1/src/auca-error-log.sql>)    
-- see [screenshot](<Scenario 1/screenshots/02-auca-error-log.sql>)
+- see [code](<Scenario 1/src/auca_error_log.sql>)    
+- see [screenshot](<Scenario 1/screenshots/02-auca-error-log.png>)
 
 ### 3. Logging Procedure (Autonomous Transaction)
 A stored procedure was created to handle all logging.
