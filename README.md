@@ -70,7 +70,7 @@ To test this we are using a simple insert statement on table `auca` outside allo
  `SELECT * FROM auca_error_log;`
 - see [screenshot](<Scenario 1/screenshots/05-test.png>)
 
-# Scenario 2: Hospital Management Package
+# Scenario 2: Hospital Management Package With Bulk Processing
 The goal of here is to design a PL/SQL package that manages hospital patient information efficiently. The system needed to handle bulk patient loading, admission updates, and display of stored records, while keeping the logic modular and easy to maintain.
       
 The solution was implemented using Oracle PL/SQL features such as packages, collections, ref cursors, and FORALL bulk operations.
